@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: cf-oracle-service-broker
+  datasource:
+    url: jdbc:oracle:thin:@//pas-macbook.local:1521/orcl
+    username: system
+    password: oracle
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+oracle:
+  tablespaceName: CF_TABLESPACE
+  tempTablespaceName: TEMP
+security:
+  user:
+    name: user
+    password: password
+management:
+  security:
+    enabled: false
+  endpoints:
+    health:
+      sensitive: false

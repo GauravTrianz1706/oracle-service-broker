@@ -1,0 +1,12 @@
+pas/au/pivotal/pcf/servicebroker/oracle/service/OracleManager.class
+pas/au/pivotal/pcf/servicebroker/oracle/repository/PasswordManagerRepository.class
+pas/au/pivotal/pcf/servicebroker/oracle/model/ServiceInstance.class
+pas/au/pivotal/pcf/servicebroker/oracle/repository/ServiceInstanceBindingRepository.class
+pas/au/pivotal/pcf/servicebroker/oracle/service/Constants.class
+pas/au/pivotal/pcf/servicebroker/oracle/model/PasswordManager.class
+pas/au/pivotal/pcf/servicebroker/oracle/service/OracleServiceInstanceService.class
+pas/au/pivotal/pcf/servicebroker/oracle/service/OracleServiceInstanceBindingService.class
+pas/au/pivotal/pcf/servicebroker/oracle/config/CatalogConfig.class
+pas/au/pivotal/pcf/servicebroker/oracle/model/ServiceInstanceBinding.class
+pas/au/pivotal/pcf/servicebroker/oracle/OracleServiceBrokerApplication.class
+pas/au/pivotal/pcf/servicebroker/oracle/repository/ServiceInstanceRepository.class

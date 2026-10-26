@@ -1,0 +1,12 @@
+/modernize-data/studio-data/TNT1001/APP863553/transformed-code/314/studio-workspace/BE/src/main/java/pas/au/pivotal/pcf/servicebroker/oracle/service/OracleServiceInstanceService.java
+/modernize-data/studio-data/TNT1001/APP863553/transformed-code/314/studio-workspace/BE/src/main/java/pas/au/pivotal/pcf/servicebroker/oracle/model/ServiceInstanceBinding.java
+/modernize-data/studio-data/TNT1001/APP863553/transformed-code/314/studio-workspace/BE/src/main/java/pas/au/pivotal/pcf/servicebroker/oracle/model/PasswordManager.java
+/modernize-data/studio-data/TNT1001/APP863553/transformed-code/314/studio-workspace/BE/src/main/java/pas/au/pivotal/pcf/servicebroker/oracle/service/OracleManager.java
+/modernize-data/studio-data/TNT1001/APP863553/transformed-code/314/studio-workspace/BE/src/main/java/pas/au/pivotal/pcf/servicebroker/oracle/OracleServiceBrokerApplication.java
+/modernize-data/studio-data/TNT1001/APP863553/transformed-code/314/studio-workspace/BE/src/main/java/pas/au/pivotal/pcf/servicebroker/oracle/model/ServiceInstance.java
+/modernize-data/studio-data/TNT1001/APP863553/transformed-code/314/studio-workspace/BE/src/main/java/pas/au/pivotal/pcf/servicebroker/oracle/config/CatalogConfig.java
+/modernize-data/studio-data/TNT1001/APP863553/transformed-code/314/studio-workspace/BE/src/main/java/pas/au/pivotal/pcf/servicebroker/oracle/repository/PasswordManagerRepository.java
+/modernize-data/studio-data/TNT1001/APP863553/transformed-code/314/studio-workspace/BE/src/main/java/pas/au/pivotal/pcf/servicebroker/oracle/service/OracleServiceInstanceBindingService.java
+/modernize-data/studio-data/TNT1001/APP863553/transformed-code/314/studio-workspace/BE/src/main/java/pas/au/pivotal/pcf/servicebroker/oracle/service/Constants.java
+/modernize-data/studio-data/TNT1001/APP863553/transformed-code/314/studio-workspace/BE/src/main/java/pas/au/pivotal/pcf/servicebroker/oracle/repository/ServiceInstanceRepository.java
+/modernize-data/studio-data/TNT1001/APP863553/transformed-code/314/studio-workspace/BE/src/main/java/pas/au/pivotal/pcf/servicebroker/oracle/repository/ServiceInstanceBindingRepository.java

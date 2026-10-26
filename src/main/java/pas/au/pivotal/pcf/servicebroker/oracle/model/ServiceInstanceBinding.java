@@ -4,14 +4,14 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table (name = "SI_BINDING")
+@Table (name = "si_binding")
 public class ServiceInstanceBinding
 {
     @Id
-    @Column (name = "BINDING_ID")
+    @Column (name = "binding_id")
     private String bindingid;
 
-    @Column (name = "SERVICE_BINDING_ID")
+    @Column (name = "service_binding_id")
     private String serviceInstanceId;
 
     private String syslogDrainUrl;

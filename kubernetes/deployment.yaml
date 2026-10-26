@@ -31,19 +31,17 @@ spec:
             - name: JAVA_OPTS
               value: "-Xmx512m -Xms256m -XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0 -Djava.security.egd=file:/dev/./urandom"
             - name: SPRING_DATASOURCE_URL
-              value: "{{SPRING_DATASOURCE_URL}}"
+              value: "{{SPRING_DATASOURCE_URL:-jdbc:postgresql://postgres:5432/oracle_service_broker}}"
             - name: SPRING_DATASOURCE_USERNAME
               value: "{{SPRING_DATASOURCE_USERNAME}}"
             - name: SPRING_DATASOURCE_PASSWORD
               value: "{{SPRING_DATASOURCE_PASSWORD}}"
             - name: SPRING_DATASOURCE_DRIVER_CLASS_NAME
-              value: "oracle.jdbc.OracleDriver"
+              value: "org.postgresql.Driver"
+            - name: SPRING_JPA_DATABASE_PLATFORM
+              value: "org.hibernate.dialect.PostgreSQLDialect"
             - name: SPRING_JPA_HIBERNATE_DDL_AUTO
               value: "{{SPRING_JPA_HIBERNATE_DDL_AUTO}}"
-            - name: ORACLE_TABLESPACENAME
-              value: "{{ORACLE_TABLESPACENAME}}"
-            - name: ORACLE_TEMPTABLESPACENAME
-              value: "{{ORACLE_TEMPTABLESPACENAME}}"
             - name: SECURITY_USER_NAME
               value: "{{SECURITY_USER_NAME}}"
             - name: SECURITY_USER_PASSWORD

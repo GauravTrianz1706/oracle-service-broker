@@ -3,7 +3,7 @@ package pas.au.pivotal.pcf.servicebroker.oracle.model;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "SI_PASSWORD")
+@Table (name = "si_password")
 public class PasswordManager
 {
     @Id

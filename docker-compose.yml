@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  oracle-service-broker:
+    image: oracle-service-broker:latest
+    container_name: oracle-service-broker
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - TZ=UTC
+      - JAVA_OPTS=-Xmx512m -Xms256m -XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0
+      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL:-jdbc:oracle:thin:@//oracle-host:1521/orcl}
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME:-system}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD:-oracle}
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=oracle.jdbc.OracleDriver
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=${SPRING_JPA_HIBERNATE_DDL_AUTO:-update}
+      - ORACLE_TABLESPACENAME=${ORACLE_TABLESPACENAME:-CF_TABLESPACE}
+      - ORACLE_TEMPTABLESPACENAME=${ORACLE_TEMPTABLESPACENAME:-TEMP}
+      - SECURITY_USER_NAME=${SECURITY_USER_NAME:-user}
+      - SECURITY_USER_PASSWORD=${SECURITY_USER_PASSWORD:-password}
+      - MANAGEMENT_SECURITY_ENABLED=false
+    volumes:
+      - ./config:/app/config
+    restart: unless-stopped
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

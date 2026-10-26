@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: oracle-service-broker
+  labels:
+    name: oracle-service-broker
+    app: oracle-service-broker

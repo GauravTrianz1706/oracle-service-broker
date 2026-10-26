@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oracle-service-broker
+  namespace: oracle-service-broker
+  labels:
+    app: oracle-service-broker
+    version: "1.0"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: oracle-service-broker
+  template:
+    metadata:
+      labels:
+        app: oracle-service-broker
+        version: "1.0"
+    spec:
+      containers:
+        - name: oracle-service-broker
+          image: {{IMAGE_URI}}
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "docker"
+            - name: TZ
+              value: "UTC"
+            - name: JAVA_OPTS
+              value: "-Xmx512m -Xms256m -XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0 -Djava.security.egd=file:/dev/./urandom"
+            - name: SPRING_DATASOURCE_URL
+              value: "{{SPRING_DATASOURCE_URL}}"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "{{SPRING_DATASOURCE_USERNAME}}"
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "{{SPRING_DATASOURCE_PASSWORD}}"
+            - name: SPRING_DATASOURCE_DRIVER_CLASS_NAME
+              value: "oracle.jdbc.OracleDriver"
+            - name: SPRING_JPA_HIBERNATE_DDL_AUTO
+              value: "{{SPRING_JPA_HIBERNATE_DDL_AUTO}}"
+            - name: ORACLE_TABLESPACENAME
+              value: "{{ORACLE_TABLESPACENAME}}"
+            - name: ORACLE_TEMPTABLESPACENAME
+              value: "{{ORACLE_TEMPTABLESPACENAME}}"
+            - name: SECURITY_USER_NAME
+              value: "{{SECURITY_USER_NAME}}"
+            - name: SECURITY_USER_PASSWORD
+              value: "{{SECURITY_USER_PASSWORD}}"
+            - name: MANAGEMENT_SECURITY_ENABLED
+              value: "false"
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            timeoutSeconds: 10
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 15
+            timeoutSeconds: 5
+            failureThreshold: 3
+      restartPolicy: Always

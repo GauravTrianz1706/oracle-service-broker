@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: oracle-service-broker-ingress
+  namespace: oracle-service-broker
+  labels:
+    app: oracle-service-broker
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+    kubernetes.io/ingress.allow-http: "true"
+spec:
+  rules:
+    - host: oracle-service-broker.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: oracle-service-broker-service
+                port:
+                  number: 80
